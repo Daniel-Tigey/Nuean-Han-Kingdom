@@ -13,16 +13,19 @@
         }
 
         body {
-            background-color: #f5f7fa;
+            background-color: #f9fafc;
             color: #333;
         }
 
-        /* 顶部导航 */
+        /* 导航 */
         nav {
-            background: #1a365d;
+            background: #2c3e50;
             color: white;
-            padding: 16px 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 18px 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 99;
         }
 
         .nav-container {
@@ -34,36 +37,42 @@
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
         }
 
         .menu a {
             color: white;
-            margin-left: 20px;
+            margin-left: 22px;
             text-decoration: none;
+            font-size: 16px;
         }
 
-        /* 国家封面区 */
+        .menu a:hover {
+            color: #ffd700;
+        }
+
+        /* 封面 */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("https://picsum.photos/id/1036/1920/1080") center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             max-width: 700px;
             margin: 0 auto;
+            color: #ffd700;
         }
 
-        /* 内容区 */
+        /* 内容 */
         .container {
             max-width: 1100px;
             margin: 50px auto;
@@ -72,56 +81,68 @@
 
         .card {
             background: white;
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 14px;
+            padding: 35px;
             margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .card h2 {
-            color: #1a365d;
-            margin-bottom: 15px;
-            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-left: 6px solid #ffd700;
+            padding-left: 12px;
         }
 
+        /* 国旗 */
+        .flag {
+            width: 240px;
+            height: 160px;
+            margin: 20px auto;
+            border: 3px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 信息网格 */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
             margin-top: 20px;
         }
 
         .info-item {
-            padding: 15px;
+            padding: 18px;
             background: #f0f4f8;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 16px;
         }
 
-        .flag {
-            width: 200px;
-            height: 130px;
-            background: #005bb7;
-            margin: 20px auto;
-            position: relative;
-            border: 2px solid #ddd;
-        }
-
-        .flag::after {
-            content: "★";
-            color: gold;
-            font-size: 50px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* 介绍 */
+        .intro {
+            line-height: 1.9;
+            font-size: 17px;
+            color: #444;
         }
 
         /* 底部 */
         footer {
-            background: #1a365d;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             margin-top: 40px;
         }
     </style>
@@ -143,15 +164,17 @@
 
     <!-- 封面 -->
     <div class="hero">
-        <h1>暖洹王国官网</h1>
-        <p>自由 · 和平 · 繁荣</p>
+        <h1>暖洹王国</h1>
+        <p>和平 · 温暖 · 永恒</p>
     </div>
 
     <!-- 内容 -->
     <div class="container">
         <div class="card">
-            <h2>国家概况</h2>
-            <div class="flag"></div>
+            <h2>🏛️ 国家概况</h2>
+            <div class="flag">
+                <img src="flag.png" alt="暖洹王国国旗">
+            </div>
             <div class="info-grid">
                 <div class="info-item"><strong>国家名称：</strong>暖洹王国</div>
                 <div class="info-item"><strong>首都：</strong>丹尼尔市</div>
@@ -160,6 +183,7 @@
                 <div class="info-item"><strong>货币：</strong>丹币 (DNK)</div>
                 <div class="info-item"><strong>建国日：</strong>2021年5月27日</div>
                 <div class="info-item"><strong>政治制度：</strong>君主制</div>
+                <div class="info-item"><strong>面积：</strong>2.75 平方米</div>
             </div>
         </div>
 
@@ -175,7 +199,8 @@
 
     <!-- 底部 -->
     <footer>
-        <p>© MMXXVI 暖洹王国 - 虚拟国家官方网站</p>
+        <p>© MMXXVI 暖洹王国 - 官方网站</p>
+        <p style="margin-top:8px; font-size:14px;">Peace · Warmth · Eternity</p>
     </footer>
 </body>
 </html>
